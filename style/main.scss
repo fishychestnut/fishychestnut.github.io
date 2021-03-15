@@ -12,14 +12,14 @@ $mobile-threshold: $field-width + 20px;
 $text-color: #776E65;
 $bright-text-color: #f9f6f2;
 
-$tile-color: #eee4da;
-$tile-gold-color: #edc22e;
+$tile-color: #f3eded;
+$tile-gold-color: #aa530e;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
 $game-container-margin-top: 40px;
 $game-container-background: #bbada0;
 
-$transition-speed: 100ms;
+$transition-speed: 200ms;
 
 html, body {
   margin: 0;
@@ -76,7 +76,7 @@ h1.title {
   line-height: $height + 22px;
   font-weight: bold;
   border-radius: 3px;
-  color: white;
+  color: rgb(71, 69, 69);
   margin-top: 8px;
   text-align: center;
 
@@ -89,7 +89,7 @@ h1.title {
     font-size: 13px;
     line-height: 13px;
     text-align: center;
-    color: $tile-color;
+    color: $tile-gold-color;
   }
 
   .score-addition {
@@ -173,7 +173,8 @@ hr {
     margin-top: $game-container-margin-top;
     position: relative;
     padding: $grid-spacing;
-
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
     cursor: default;
     -webkit-touch-callout: none;
     -ms-touch-callout: none;
@@ -201,7 +202,8 @@ hr {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba($tile-color, .5);
+      background: rgba($tile-color, .7);
+      color: $text-color;
       z-index: 100;
 
       text-align: center;
@@ -226,21 +228,21 @@ hr {
         margin-left: 9px;
         // margin-top: 59px;
 
-	&.keep-playing-button {
-	  display: none;
-	}
+        &.keep-playing-button {
+          display: none;
+        }
       }
 
       @include animation(fade-in 800ms ease $transition-speed * 12);
       @include animation-fill-mode(both);
 
       &.game-won {
-        background: rgba($tile-gold-color, .5);
+        background: rgba($tile-gold-color, .7);
         color: $bright-text-color;
 
-	a.keep-playing-button {
-	  display: inline-block;
-	}
+        a.keep-playing-button {
+          display: inline-block;
+        }
       }
 
       &.game-won, &.game-over {
@@ -333,20 +335,23 @@ hr {
 
   $base: 2;
   $exponent: 1;
-  $limit: 11;
+  $limit: 14;
 
   // Colors for all 11 states, false = no special color
   $special-colors: false false, // 2
                    false false, // 4
-                   #f78e48 true, // 8
-                   #fc5e2e true, // 16
-                   #ff3333 true, // 32
-                   #ff0000 true, // 64
-                   false true, // 128
+                   false true, // 8
+                   #f6e1b8 true, // 16
+                   #c65f63 true, // 32
+                   #84577c true, // 64
+                   #61305d true, // 128
                    false true, // 256
                    false true, // 512
                    false true, // 1024
-                   false true; // 2048
+                   #ff5959 true,  // 2048
+                   #facf5a true, // 4096
+                   #df9b1f true, // 8192
+                   #f80202be true; // 16384
 
 
   // Build tile colors
@@ -355,7 +360,7 @@ hr {
 
     &.tile-#{$power} .tile-inner {
       // Calculate base background color
-      $gold-percent: ($exponent - 1) / ($limit - 1) * 100;
+      $gold-percent: ($exponent - 1) / ($limit) * 100;
       $mixed-background: mix($tile-gold-color, $tile-color, $gold-percent);
 
       $nth-color: nth($special-colors, $exponent);
@@ -408,7 +413,7 @@ hr {
   // Super tiles (above 2048)
   &.tile-super .tile-inner {
     color: $bright-text-color;
-    background: mix(#333, $tile-gold-color, 95%);
+    // background: mix(#333, $tile-gold-color, 95%);
 
     font-size: 30px;
 
