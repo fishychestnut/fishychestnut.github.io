@@ -24,7 +24,7 @@ GameManager.prototype.restart = function () {
 
 // Restart the game
 GameManager.prototype.cheat = function () {
-  console.log('cheat');
+  // console.log('cheat');
   cheated = true;
   this.addCheatTile(1024); // Clear the game won/lost message
 };

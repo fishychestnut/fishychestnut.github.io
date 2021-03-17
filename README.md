@@ -1,24 +1,21 @@
-# Nutty 2048
-
-![2048](https://oversea-ci.daocloud.io/api/badge/build/daocloud/dao-2048)
-
-2048 是一款数字益智游戏，相同数字的方块合并在一起时会相加。每一回合都会多出一块写有 2 或者 4 的方块，当方块无法移动时游戏结束。玩家要想办法在这个小小的 16 个格子中凑出一块带有 **2048** （或更大）的方块。
-
-### 鸣谢
-
-本镜像源自于 Docker Hub 镜像 **[alexwhen/docker-2048](https://registry.hub.docker.com/u/alexwhen/docker-2048/)**，感谢开发者 **[alexwhen](https://github.com/alexwhen)** 的热心支持。
+# Project Chestnut can 
+Lots of chestnuts, in one can. Chestnut Can!
 
 
 ### mapping number to nuts
 
-2 - sunflower seed
-4 - peanut
-8 - Almond
-16 - Cashew
-32 - Pistachio
-64 - Walnut
-128 - Hazelnut
-256 - Pine nut
-512 - Macadamia nut
-1024 - Pecan
-2048 - Chestnut
+- 2 - ![sunflower seed](./assets/2.png "sunflower seed")
+- 4 - ![Peanut](./assets/4.png "Peanut")
+- 8 - ![Pistachio](./assets/8.png "Pistachio")
+- 16 - ![Almond](./assets/16.png "Almond")
+- 32 - ![Cashew](./assets/32.png "Cashew")
+- 64 - ![Walnut](./assets/64.png "Walnut")
+- 128 - ![11](./assets/128.png "11")
+- 256 - ![Pine nut](./assets/256.png "Pine nut")
+- 512 - ![11](./assets/512.png "11")
+- 1024 - ![Pecan](./assets/1024.png "Pecan")
+- 2048 - ![Chestnut](./assets/2048.png "Chestnut")
+- 4096 - ![Golden chestnut](./assets/4096.png "Golden chestnut")
+
+
+

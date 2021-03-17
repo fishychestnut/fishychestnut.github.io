@@ -1,0 +1,25 @@
+$lightColor: #d7eaea;
+$lighterColor: #acdbdf;
+$greyColor: #69779b;
+$darkColor: #9692af;
+
+
+body {
+  background-color: $greyColor;
+  // background-color: #4592af;
+}
+
+.container {
+  // background-color: #4592af;
+  z-index: 2;
+}
+
+#background {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 40%;
+  height: 100%;
+  background-color: $lightColor;
+  z-index: -1;
+}

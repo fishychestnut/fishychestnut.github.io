@@ -144,7 +144,7 @@ KeyboardInputManager.prototype.keepPlaying = function (event) {
 
 KeyboardInputManager.prototype.useCheatCode = function (event) {
   event.preventDefault();
-  console.log(event);
+  // console.log(event);
   this.emit("cheatCode");
 };
 
