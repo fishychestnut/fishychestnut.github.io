@@ -1,11 +1,8 @@
-$lightColor: #d7eaea;
-$lighterColor: #acdbdf;
-$greyColor: #69779b;
-$darkColor: #9692af;
+@import './variables.scss';
 
 
 body {
-  background-color: $greyColor;
+  background-color: $lightColor;
   // background-color: #4592af;
 }
 
