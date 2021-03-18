@@ -48,7 +48,7 @@ KeyboardInputManager.prototype.listen = function () {
     83: 2, // S
     65: 3,  // A
 
-    13: 4
+    // 13: 4
   };
   this.gameContainer = document.querySelector(".game-container");
 
@@ -69,6 +69,10 @@ KeyboardInputManager.prototype.listen = function () {
     // R key restarts the game
     if (!modifiers && event.keyCode === 82) {
       self.restart.call(self, event);
+    }
+    // R key restarts the game
+    if (!modifiers && event.keyCode === 13) {
+      self.useCheatCode.call(self, event);
     }
   });
   this.gameContainer.focus();
