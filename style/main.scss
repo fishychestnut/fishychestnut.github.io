@@ -2,34 +2,10 @@
 @import "variables.scss";
 @import "fonts/clear-sans.css";
 
-$field-width: 500px;
-$grid-spacing: 15px;
-$grid-row-cells: 4;
-$tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
-$tile-border-radius: 3px;
-
-$mobile-threshold: $field-width + 20px;
-
-$text-color: #776E65;
-$bright-text-color: #f9f6f2;
-
-$tile-color: #f3eded;
-$tile-gold-color: #aa530e;
-$tile-gold-glow-color: lighten($tile-gold-color, 15%);
-
-$game-container-margin-top: 40px;
-$game-container-background: #bbada0;
-
-$transition-speed: 200ms;
 
 html, body {
-  margin: 0;
-  padding: 0;
 
-  background: $lightColor;
-  color: $text-color;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: 18px;
+  background: $lighterColor;
 }
 
 
@@ -42,7 +18,7 @@ body {
 }
 
 h1.title {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: bold;
   margin: 0;
   display: block;
@@ -157,22 +133,16 @@ hr {
   }
 }
 
-// Styles for buttons
-@mixin button {
-  display: inline-block;
-  background: darken($game-container-background, 20%);
-  border-radius: 3px;
-  padding: 0 20px;
-  text-decoration: none;
-  color: $bright-text-color;
-  height: 40px;
-  line-height: 42px;
-}
 
+.cheat-button{
+  @include button;
+  
+}
 // Game field mixin used to render CSS at different width
 @mixin game-field {
   .game-container {
     margin-top: $game-container-margin-top;
+    margin-bottom: $game-container-margin-top/2;
     position: relative;
     padding: $grid-spacing;
     backdrop-filter: blur( 4px );
@@ -235,7 +205,7 @@ hr {
         }
       }
 
-      @include animation(fade-in 800ms ease $transition-speed * 12);
+      @include animation(fade-in 500ms ease $transition-speed * 5);
       @include animation-fill-mode(both);
 
       &.game-won {
@@ -464,6 +434,9 @@ hr {
 
 .above-game {
   @include clearfix;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .game-intro {
@@ -476,13 +449,14 @@ hr {
   @include button;
   display: block;
   text-align: center;
-  float: right;
 }
 
 .game-explanation {
   margin-top: 50px;
 }
-
+.heading {
+  margin-bottom: 10px;
+}
 @include smaller($mobile-threshold) {
   // Redefine variables for smaller screens
   $field-width: 280px !global;
@@ -502,7 +476,7 @@ hr {
   }
 
   h1.title {
-    font-size: 27px;
+    font-size: 24px;
     margin-top: 15px;
   }
 

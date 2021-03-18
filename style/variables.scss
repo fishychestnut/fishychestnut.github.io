@@ -1,4 +1,53 @@
-$lightColor: #d7eaea;
-$lighterColor: #acdbdf;
+$lightColor: #f5f5f5;
+$lighterColor: #f6e1b8;
+// $lighterColor: #acdbdf;
 $greyColor: #69779b;
 $darkColor: #9692af;
+// #f6e1b8 true, // 16
+//                    #c65f63 true, // 32
+//                    #84577c true, // 64
+//                    #61305d 
+$field-width: 500px;
+$grid-spacing: 15px;
+$grid-row-cells: 4;
+$tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
+$tile-border-radius: 3px;
+
+$mobile-threshold: $field-width + 20px;
+
+$text-color: #776E65;
+$bright-text-color: #f9f6f2;
+
+$tile-color: #f3eded;
+$tile-gold-color: #aa530e;
+$tile-gold-glow-color: lighten($tile-gold-color, 15%);
+
+$game-container-margin-top: 40px;
+$game-container-background: #bbada0;
+
+$transition-speed: 100ms;
+// Styles for buttons
+@mixin button {
+  display: inline-block;
+  background: darken($game-container-background, 20%);
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: $bright-text-color;
+  height: 40px;
+  line-height: 42px;
+
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+}
+a {
+  color: $text-color;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}

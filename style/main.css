@@ -2,10 +2,20 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #d7eaea;
   color: #776E65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
+}
+
+a {
+  color: #776E65;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+html, body {
+  background: #f6e1b8;
 }
 
 body {
@@ -19,7 +29,7 @@ body {
 }
 
 h1.title {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: bold;
   margin: 0;
   display: block;
@@ -164,8 +174,20 @@ hr {
     opacity: 1;
   }
 }
+.cheat-button {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+}
+
 .game-container {
   margin-top: 40px;
+  margin-bottom: 20px;
   position: relative;
   padding: 15px;
   backdrop-filter: blur(4px);
@@ -197,9 +219,9 @@ hr {
   color: #776E65;
   z-index: 100;
   text-align: center;
-  -webkit-animation: fade-in 800ms ease 2400ms;
-  -moz-animation: fade-in 800ms ease 2400ms;
-  animation: fade-in 800ms ease 2400ms;
+  -webkit-animation: fade-in 500ms ease 500ms;
+  -moz-animation: fade-in 500ms ease 500ms;
+  animation: fade-in 500ms ease 500ms;
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -362,9 +384,9 @@ hr {
 
 .tile {
   position: absolute;
-  -webkit-transition: 200ms ease-in-out;
-  -moz-transition: 200ms ease-in-out;
-  transition: 200ms ease-in-out;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform;
@@ -608,9 +630,9 @@ hr {
   }
 }
 .tile-new .tile-inner {
-  -webkit-animation: appear 200ms ease 200ms;
-  -moz-animation: appear 200ms ease 200ms;
-  animation: appear 200ms ease 200ms;
+  -webkit-animation: appear 200ms ease 100ms;
+  -moz-animation: appear 200ms ease 100ms;
+  animation: appear 200ms ease 100ms;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
@@ -669,14 +691,19 @@ hr {
 }
 .tile-merged .tile-inner {
   z-index: 20;
-  -webkit-animation: pop 200ms ease 200ms;
-  -moz-animation: pop 200ms ease 200ms;
-  animation: pop 200ms ease 200ms;
+  -webkit-animation: pop 200ms ease 100ms;
+  -moz-animation: pop 200ms ease 100ms;
+  animation: pop 200ms ease 100ms;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
+.above-game {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .above-game:after {
   content: "";
   display: block;
@@ -700,11 +727,14 @@ hr {
   line-height: 42px;
   display: block;
   text-align: center;
-  float: right;
 }
 
 .game-explanation {
   margin-top: 50px;
+}
+
+.heading {
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 520px) {
@@ -718,7 +748,7 @@ hr {
   }
 
   h1.title {
-    font-size: 27px;
+    font-size: 24px;
     margin-top: 15px;
   }
 
@@ -754,6 +784,7 @@ hr {
 
   .game-container {
     margin-top: 17px;
+    margin-bottom: 8.5px;
     position: relative;
     padding: 10px;
     backdrop-filter: blur(4px);
@@ -785,9 +816,9 @@ hr {
     color: #776E65;
     z-index: 100;
     text-align: center;
-    -webkit-animation: fade-in 800ms ease 2400ms;
-    -moz-animation: fade-in 800ms ease 2400ms;
-    animation: fade-in 800ms ease 2400ms;
+    -webkit-animation: fade-in 500ms ease 500ms;
+    -moz-animation: fade-in 500ms ease 500ms;
+    animation: fade-in 500ms ease 500ms;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
     animation-fill-mode: both;
